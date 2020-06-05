@@ -34,39 +34,42 @@ var randomUpperCase = "";
 var random = "";
 var value="";
    
-      if((useLowerCase === true) && (useUpperCase === true)){
+  if((useLowerCase === true) && (useUpperCase === true)){
     //   console.log("Inside loop");
-
-      for(var j = 0; j<passLen;j++){
+       var rem = passLen%2;
+       console.log(rem);
+       //intRem= parseInt(rem);
+     
+       var passLenNew = parseInt(passLen) + rem;
+       console.log(passLenNew);
+      
+      for(var j = 0; j<passLenNew/2;j++){
         //   console.log("Inside for loop");
-      var b = Math.floor(Math.random() * 27);
-      var c = Math.floor(Math.random() * 27);
-      value += possLowerCase[b] + possUpperCase[c];
-    //   console.log("Value" +value);
-    //   random += value;
+        console.log("Loop Count " +j);
+      var b = Math.floor(Math.random() * 26);
+      var c = Math.floor(Math.random() * 26);
+      value = value + (possLowerCase[b] + possUpperCase[c]);
+      console.log("Value" +value);
+   
+
+    // if(rem!==0){
+    //   value = value.slice(1,passLen);
+    // }
       
        }
        return value;
       }
 
-    // if(useUpperCase){
-
-    //     for(var k = 0; k<passLen;k++){
-    //     var c = Math.floor(Math.random() * 27);
-    //     randomUpperCase = randomUpperCase + possUpperCase[c];
-    // }
-//}
 
     // console.log(randomLowerCase);
     // console.log(randomUpperCase);
     // var passWordVal = randomLowerCase + randomUpperCase ;
     
     // var finalPassword = passWordVal.split(1,passLen);
-    var finalPassword= random.split(1,passLen);
+    // var finalPassword = value.slice(1,passLen-1);
     // console.log(finalPassword);
     
-    return(finalPassword);
-  }
+   
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -75,6 +78,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+

@@ -5,8 +5,8 @@ function generatePassword(){
 var possUpperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"];
 var possLowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","o","q","r","s","t","u","v","w","x","y","z"];
 
-var lowerCase = false;
-var upperCase = false;
+// var lowerCase = false;
+// var upperCase = false;
 
 var passLen = prompt("Please enter the length of the password, any number between 8 and 128");
 
@@ -18,16 +18,7 @@ if(passLen<8 && passLen >128){
 
 var useLowerCase = confirm("Can I include lowercase in your password?");
 
-// if(useLowerCase){
-//     lowerCase = true;
-// }
-
 var useUpperCase = confirm("Can I include uppercase in your password?");
-
-// if(useUpperCase){
-//   upperCase = true;
-// }
-
 
 var randomLowerCase = "";
 var randomUpperCase = "";
@@ -37,9 +28,10 @@ var randomUpperCase = "";
       console.log("a value " +a);
 
       for(var j = 0; j<a;j++){
-      var b = Math.floor(Math.random() * 27);
+      var b = Math.floor(Math.random() * possLowerCase.length);
+      console.log(b);
       randomLowerCase=  randomLowerCase + possLowerCase[b];
-      var c = Math.floor(Math.random() * 27);
+      var c = Math.floor(Math.random() * possUpperCase.length);
       randomUpperCase = randomUpperCase + possUpperCase[c];
       
        }
@@ -48,9 +40,9 @@ var randomUpperCase = "";
     var passWordVal = randomLowerCase + randomUpperCase ;
     console.log("passWordVal" +passWordVal);
     var finalPassword = passWordVal;
-       if((passLen%2)!==0){
-        finalPassword = passWordVal-1;
-       }
+      //  if((passLen%2)!==0){
+      //   finalPassword = passWordVal-1;
+      //  }
     
     
     console.log(randomLowerCase);
