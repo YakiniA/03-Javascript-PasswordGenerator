@@ -53,8 +53,9 @@ console.log("passValue Before loop" +pass);
       var newPass = "";
       for(var j = 0; j<passLen;j++){
       console.log("Pass Value" +pass);
-      var b = Math.floor(Math.random() * pass.length);
-      newPass += pass[b];
+      // var b = Math.floor(Math.random() * pass.length);
+      // newPass += pass[b];
+      newPass += pass[Math.floor(Math.random() * pass.length)];
       console.log("New Password value" +newPass);
      }
      
