@@ -2,79 +2,57 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-var possUpperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"];
-var possLowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","o","q","r","s","t","u","v","w","x","y","z"];
-var possNumbers = [1,2,3,4,5,6,7,8,9,0];
-var possSpecialChars = ["!","\"","#","$","%","&","'","(",")","*","+","-",".",":",";","<","=",">","?","@","[","\\","/","]","^","-","{","}","|","~"];
-// var lowerCase = false;
-// var upperCase = false;
 
-var passLen = prompt("Please enter the length of the password, any number between 8 and 128");
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var numbers   = "1234567890";
+var specialChars = "!\#$%&'*+-:;<=>?@[/]^{}|~`.,\\";
 
-if(passLen<8 || passLen >128){
+var passwordLength = prompt("Please enter the length of the password, any number between 8 and 128");
+
+if(passwordLength <8 || passwordLength >128){
     alert("Please enter between 8 and 128");
     generatePassword();
 } else{
-  console.log(passLen);
+  console.log(passwordLength);
 }
 
-var pass ="";
+var password ="";
 
 var useLowerCase = confirm("Can I include lowercase in your password?");
 if(useLowerCase){
-  pass += possLowerCase;
-  
+  password += lowerCase;
 }
 
 var useUpperCase = confirm("Can I include uppercase in your password?");
 
 if(useUpperCase){
-  pass+= possUpperCase;
+  password+= upperCase;
 }
 
 var useNumbers = confirm("Can I include numbers in your password?");
+console.log("use numbers" +useNumbers);
 if(useNumbers){
-  pass+= possNumbers;
+  password+= numbers;
 }
 
 var useSpecialChars = confirm("Can I include special characters in your password?");
 if(useSpecialChars){
-  pass += possSpecialChars;
+  password += specialChars;
 }
 
-console.log("passValue Before loop" +pass);
+console.log("passwordValue Before loop" +password);
 
-// var randomLowerCase = "";
-// var randomUpperCase = "";
-//     if(useLowerCase===true && useUpperCase===true){
-//       console.log(passLen);
-//       var a = Math.round(passLen/2);
-//       console.log("a value " +a);
-      var newPass = "";
-      for(var j = 0; j<passLen;j++){
-      console.log("Pass Value" +pass);
-      // var b = Math.floor(Math.random() * pass.length);
-      // newPass += pass[b];
-      newPass += pass[Math.floor(Math.random() * pass.length)];
-      console.log("New Password value" +newPass);
+      var generatedPassword = "";
+      for(var j = 0; j<passwordLength;j++){
+      console.log("Password Value" +password);
+      generatedPassword += password[Math.floor(Math.random() * password.length)];
+      console.log("New Password value" +generatedPassword);
      }
-     
-     return(newPass);
+      return(generatedPassword);
     }
-
-    // var passWordVal = randomLowerCase + randomUpperCase ;
-    // console.log("passWordVal" +passWordVal);
-    // var finalPassword = passWordVal;
-      //  if((passLen%2)!==0){
-      //   finalPassword = passWordVal-1;
-      //  }
-    
-    
-    // console.log(randomLowerCase);
-    // console.log(randomUpperCase);
-    // console.log(finalPassword);
-    
   
+// if(useLowerCase === '')
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
