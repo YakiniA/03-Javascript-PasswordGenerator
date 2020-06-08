@@ -12,116 +12,69 @@ var useNumbers;
 var useSpecialChars;
 
 function displayValue(val){
-    console.log("On sliding method is called");
     document.getElementById("textInput").value = val;
-
     }
 
 function validateInput(){
     var password ="";
-    // passwordLength = prompt("Please enter the length of the password, any number between 8 and 128");
-    // console.log(passwordLength);
-    passwordLength = document.forms["myForm"]["vol"].value;
-    console.log("Password length" +passwordLength);
-
-   
-    // if(passwordLength < 8 || passwordLength > 128){
-    //     alert("Please enter any number between 8 and 128");
-    //     console.log(passwordLength);
-    //     return validateInput();
-    // }
-
-    // var checkBox = document.getElementById("switch1");
-    // var text = document.getElementById("text");
-    // var y = text.checked();
-    // console.log("Use Lower Case" +checkBox.style.display);
+    passwordLength = document.forms["myForm"]["rangeInput"].value;
+    // console.log("Password length" +passwordLength);
 
     var switch1State=document.getElementById("switch1").checked;
-    console.log(switch1State);
+    // console.log(switch1State);
+
+    if(switch1State){
+        password += lowerCase;
+    }
 
     var switch2State=document.getElementById("switch2").checked;
-    console.log(switch2State);
+    // console.log(switch2State);
+    
+    if(switch2State){
+        password+= upperCase;
+    }
 
     var switch3State=document.getElementById("switch3").checked;
-    console.log(switch3State);
+    // console.log(switch3State);
+
+    if(switch3State){
+        password+= numbers;
+    }
 
     var switch4State=document.getElementById("switch4").checked;
-    console.log(switch4State);
+    // console.log(switch4State);
 
-
-    // var switchStatus = false;
-    // document.getElementById("switch1").addEventListener('change', function() {
-    //     if (this.checked) {
-    //       console.log("power on");
-    //     } else {
-    //       if (!confirm("This will shutdown power! Are you sure?")) {
-    //         this.checked = true;
-    //       }
-    //     };
-    //   });
-
-
-    // useLowerCase = confirm("Can I include lowercase in your password?");
-    if(switch1State){
-    password += lowerCase;
-    }
-
-    // useUpperCase = confirm("Can I include uppercase in your password?");
-    if(switch2State){
-    password+= upperCase;
-    }
-
-    // useNumbers = confirm("Can I include numbers in your password?");
-    // console.log("use numbers" +useNumbers);
-    if(switch3State){
-    password+= numbers;
-    }
-
-    // useSpecialChars = confirm("Can I include special characters in your password?");
     if(switch4State){
     password += specialChars;
     }
 
-    console.log("passwordValue Before loop" +password);
+    // console.log("passwordValue Before loop" +password);
 
     if(password === ""){
-         // alert("Please select a Character Type for your password!!!");
-         document.getElementById("message").innerHTML = "Please select a Character Type!!!";
-        
+         document.getElementById("message").innerHTML = "Please select a Character Type!!!";   
    
     }else{  
         document.getElementById("message").innerHTML = "";
-        console.log("Inside else condition");    
         generatePassword(password);
-        return password;      
-       
+        return password;        
     }
-
 }
 
 function generatePassword(password){
-          console.log("Inside Generated Password");
-          var generatedPassword = "";
-          console.log(passwordLength);
-          for(var j = 0; j<passwordLength;j++){
-              console.log("Inside for loop" +password);
-          generatedPassword += password[Math.floor(Math.random() * password.length)];
-          
-          console.log("New Password value" +generatedPassword);
-
+        var generatedPassword = "";
+        for(var j = 0; j<passwordLength;j++){
+        generatedPassword += password[Math.floor(Math.random() * password.length)];   
         }
         return generatedPassword;
 }
 
 // Write password to the #password input
 function writePassword() {
-  var passwordValue =  validateInput();
-  console.log("Password Value :" +passwordValue); 
+    var passwordValue =  validateInput();
     if(typeof passwordValue !== 'undefined'){
-    var password = generatePassword(passwordValue);  
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-    
+        var password = generatePassword(passwordValue);  
+        var passwordText = document.querySelector("#password");
+        passwordText.value = password;    
     }
 }
 
