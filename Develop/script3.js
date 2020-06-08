@@ -11,6 +11,11 @@ var useUpperCase;
 var useNumbers;
 var useSpecialChars;
 
+function displayValue(val){
+    console.log("On sliding method is called");
+    document.getElementById("textInput").value = val;
+
+    }
 
 function validateInput(){
     var password ="";
@@ -19,6 +24,7 @@ function validateInput(){
     passwordLength = document.forms["myForm"]["vol"].value;
     console.log("Password length" +passwordLength);
 
+   
     // if(passwordLength < 8 || passwordLength > 128){
     //     alert("Please enter any number between 8 and 128");
     //     console.log(passwordLength);
