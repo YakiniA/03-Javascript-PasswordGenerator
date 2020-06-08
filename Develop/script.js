@@ -11,68 +11,71 @@ var useUpperCase;
 var useNumbers;
 var useSpecialChars;
 
+function displayValue(val){
+    document.getElementById("textInput").value = val;
+    }
+
 function validateInput(){
     var password ="";
-    passwordLength = prompt("Please enter the length of the password, any number between 8 and 128");
-    console.log(passwordLength);
-    if(passwordLength < 8 || passwordLength > 128){
-        alert("Please enter any number between 8 and 128");
-        console.log(passwordLength);
-        return validateInput();
+    passwordLength = document.forms["myForm"]["rangeInput"].value;
+    // console.log("Password length" +passwordLength);
+
+    var switch1State=document.getElementById("switch1").checked;
+    // console.log(switch1State);
+
+    if(switch1State){
+        password += lowerCase;
     }
 
-    useLowerCase = confirm("Can I include lowercase in your password?");
-    if(useLowerCase){
-    password += lowerCase;
+    var switch2State=document.getElementById("switch2").checked;
+    // console.log(switch2State);
+    
+    if(switch2State){
+        password+= upperCase;
     }
 
-    useUpperCase = confirm("Can I include uppercase in your password?");
-    if(useUpperCase){
-    password+= upperCase;
+    var switch3State=document.getElementById("switch3").checked;
+    // console.log(switch3State);
+
+    if(switch3State){
+        password+= numbers;
     }
 
-    useNumbers = confirm("Can I include numbers in your password?");
-    console.log("use numbers" +useNumbers);
-    if(useNumbers){
-    password+= numbers;
-    }
+    var switch4State=document.getElementById("switch4").checked;
+    // console.log(switch4State);
 
-    useSpecialChars = confirm("Can I include special characters in your password?");
-    if(useSpecialChars){
+    if(switch4State){
     password += specialChars;
     }
 
-    console.log("passwordValue Before loop" +password);
+    // console.log("passwordValue Before loop" +password);
 
     if(password === ""){
-    alert("Please select either LowerCase/ UpperCase/ Numbers/ Special Characters for your password");
-    validateInput();
-    }else{
-        return password;
+         document.getElementById("message").innerHTML = "Please select a Character Type!!!";   
+   
+    }else{  
+        document.getElementById("message").innerHTML = "";
         generatePassword(password);
-       
+        return password;        
     }
 }
 
 function generatePassword(password){
-          var generatedPassword = "";
-          for(var j = 0; j<passwordLength;j++){
-          generatedPassword += password[Math.floor(Math.random() * password.length)];
-          console.log("New Password value" +generatedPassword);
-
+        var generatedPassword = "";
+        for(var j = 0; j<passwordLength;j++){
+        generatedPassword += password[Math.floor(Math.random() * password.length)];   
         }
         return generatedPassword;
 }
 
 // Write password to the #password input
 function writePassword() {
-  var passFromValidateInput  = validateInput();
-  console.log(passFromValidateInput);
-  var password = generatePassword(passFromValidateInput);
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+    var passwordValue =  validateInput();
+    if(typeof passwordValue !== 'undefined'){
+        var password = generatePassword(passwordValue);  
+        var passwordText = document.querySelector("#password");
+        passwordText.value = password;    
+    }
 }
 
 // Add event listener to generate button
