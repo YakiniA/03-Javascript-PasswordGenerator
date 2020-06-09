@@ -18,7 +18,7 @@ function displayValue(val){
 function validateInput(){
     var password ="";
     passwordLength = document.forms["myForm"]["rangeInput"].value;
-    // console.log("Password length" +passwordLength);
+    console.log("Password length" +passwordLength);
 
     var switch1State=document.getElementById("switch1").checked;
     // console.log(switch1State);
