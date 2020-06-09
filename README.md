@@ -33,6 +33,6 @@ Here's the link to my developed Website : [Javascript-PasswordGenerator](https:/
 
 #### References
 
-W3Schools  : [W3Schools - Slider](https://www.w3schools.com/tags/att_input_type_range.asp)
-StackOverflow: [StackOverflow - Display Slider Value](https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value)
+W3Schools  : [W3Schools - Slider](https://www.w3schools.com/tags/att_input_type_range.asp)<br/>
+StackOverflow: [StackOverflow - Display Slider Value](https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value)<br/>
 Bootstrap  : [Bootstrap - Toggle Switch](https://getbootstrap.com/docs/4.5/components/forms/#switches)
