@@ -23,10 +23,10 @@ This assignment focus on random password generation depending on the inputs like
 #### Screenshots
 
 <p style ="text-align:center;">
-<img src="Assets/Images/lower&uppercaseSelection.jpg" width="300" alt= "Upper&LowerCase Selection " height="350"/>
-<img src="Assets/Images/numbers&specialchars.jpg"  width="300" alt="Numbers&SpecialChars Selection " height="350">
-<img src="Assets/Images/allcharacterTypes.jpg.jpg" width="300" alt="AllCharTypes Selection" height="350"/>
-<img src="Assets/Images/Errormessage.jpg"  width="300" alt="Error Message" height="350"/>
+<img src="Assets/lower&uppercaseSelection.jpg" width="300" alt= "Upper&LowerCase Selection " height="350"/>
+<img src="Assets/numbers&specialchars.jpg"  width="300" alt="Numbers&SpecialChars Selection " height="350">
+<img src="Assets/allcharacterTypes.jpg.jpg" width="300" alt="AllCharTypes Selection" height="350"/>
+<img src="Assets/Errormessage.jpg"  width="300" alt="Error Message" height="350"/>
 </p>
 
 Here's the link to my developed Website : [Javascript-PasswordGenerator](https://yakinia.github.io/03-Javascript-PasswordGenerator/)
