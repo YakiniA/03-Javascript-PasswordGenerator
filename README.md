@@ -25,7 +25,7 @@ This assignment focus on random password generation depending on the inputs like
 <p style ="text-align:center;">
 <img src="Assets/lower&uppercaseSelection.jpg" width="300" alt= "Upper&LowerCase Selection " height="350"/>
 <img src="Assets/numbers&specialchars.jpg"  width="300" alt="Numbers&SpecialChars Selection " height="350">
-<img src="Assets/allcharacterTypes.jpg.jpg" width="300" alt="AllCharTypes Selection" height="350"/>
+<img src="Assets/allcharacterTypes.jpg" width="300" alt="AllCharTypes Selection" height="350"/>
 <img src="Assets/Errormessage.jpg"  width="300" alt="Error Message" height="350"/>
 </p>
 
