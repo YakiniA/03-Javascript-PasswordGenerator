@@ -4,7 +4,7 @@ This assignment focus on random password generation depending on the inputs like
 
 ### Functionality of the application
 
-* The user clicks the "Generate Password" button for generating the password.
+* The user clicks the "Generate Password" button.
 * The user will be prompted to enter the length of the password.
 * Validation should be done to ensure the range is between 8 and 128 and no other special characters in the password length field.
 * Then the user will be prompted to enter lowercase, uppercase, numeric, and/or special characters to include in the password.
@@ -21,3 +21,18 @@ This assignment focus on random password generation depending on the inputs like
 * Added necessary comments for easy understanding.
 
 #### Screenshots
+
+<p style ="text-align:center;">
+<img src="Assets/Images/lower&uppercaseSelection.jpg" width="300" alt= "Upper&LowerCase Selection " height="350"/>
+<img src="Assets/Images/numbers&specialchars.jpg"  width="300" alt="Numbers&SpecialChars Selection " height="350">
+<img src="Assets/Images/allcharacterTypes.jpg.jpg" width="300" alt="AllCharTypes Selection" height="350"/>
+<img src="Assets/Images/Errormessage.jpg"  width="300" alt="Error Message" height="350"/>
+</p>
+
+Here's the link to my developed Website : [Javascript-PasswordGenerator](https://yakinia.github.io/03-Javascript-PasswordGenerator/)
+
+#### References
+
+W3Schools  : [W3Schools - Slider](https://www.w3schools.com/tags/att_input_type_range.asp)
+StackOverflow: [StackOverflow - Display Slider Value](https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value)
+Bootstrap  : [Bootstrap - Toggle Switch](https://getbootstrap.com/docs/4.5/components/forms/#switches)
