@@ -1,55 +1,46 @@
 var generateBtn = document.querySelector("#generate");
 
+// All the variables are initialized
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var numbers   = "1234567890";
 var specialChars = "!\#$%&'*+-:;<=>?@[/]^{}|~`.,\\";
 
 var passwordLength;
-var useLowerCase;
-var useUpperCase;
-var useNumbers;
-var useSpecialChars;
 
+// function displayValue(val) is for displaying the value of the slider upon scrolling
 function displayValue(val){
     document.getElementById("textInput").value = val;
-    }
+}
 
+// validateInput function is for getting the input and produce all possible password combinations
 function validateInput(){
     var password ="";
     passwordLength = document.forms["myForm"]["rangeInput"].value;
-    console.log("Password length" +passwordLength);
-
-    var switch1State=document.getElementById("switch1").checked;
-    // console.log(switch1State);
-
+ 
+    // Getting the state of the toggler switch
+    // if(true) then get its corresponding character type values
+    var switch1State=document.getElementById("switch1").checked; 
     if(switch1State){
         password += lowerCase;
     }
 
-    var switch2State=document.getElementById("switch2").checked;
-    // console.log(switch2State);
-    
+    var switch2State=document.getElementById("switch2").checked;  
     if(switch2State){
         password+= upperCase;
     }
 
     var switch3State=document.getElementById("switch3").checked;
-    // console.log(switch3State);
-
     if(switch3State){
         password+= numbers;
     }
 
     var switch4State=document.getElementById("switch4").checked;
-    // console.log(switch4State);
-
     if(switch4State){
     password += specialChars;
     }
 
-    // console.log("passwordValue Before loop" +password);
-
+    // If not selected any character type then this error message is shown
     if(password === ""){
          document.getElementById("message").innerHTML = "Please select a Character Type!!!";   
    
@@ -60,6 +51,7 @@ function validateInput(){
     }
 }
 
+// The password is generated in the password length value provided
 function generatePassword(password){
         var generatedPassword = "";
         for(var j = 0; j<passwordLength;j++){

@@ -17,6 +17,7 @@ body {
   background-color: #f9fbfd;
 }
 
+/* Error message Styling */
 #message{
     color: red;
     font-size: 20px;
@@ -47,7 +48,7 @@ header {
   padding: 30px 40px;
 }
 
-/* Included the header */
+/* Added to override the bootstrap settings*/
 .card-header{
     background-color: white;
 }
@@ -65,7 +66,7 @@ header {
   min-height: 100px;
 }
 
-/* Changed the footer little bit */
+/*Included to override the bootstrap settings */
 .card-footer {
     text-align: center;
     background-color: white;

@@ -19,15 +19,19 @@
           <h2>Generate a Password</h2>
         </div>
 
+      <!-- Included this p tag for displaying the error message -->
       <p id="message"></p>
      
       <form name="myForm">
-
+        <!-- Included this slider for selecting the pasword length -->
         <label for="rangeInput">Select Password Length between 8 and 128</label>
         <input type="range" id="rangeInput" name="rangeInput" min="8" max="128" onchange="displayValue(this.value);">
+       
+        <!-- The value of the slider is displayed -->
         <label for="value">Value: </label>
         <input type="text" id="textInput" value="68" style="width: 50px;" readonly>
         
+        <!-- Included Bootstrap toggler for Character types lowercase, uppercase, numbers, special characters -->
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="switch1" name="lowerCase" >
             <label class="custom-control-label" for="switch1">Use Lower Case</label>
@@ -48,7 +52,8 @@
             <label class="custom-control-label" for="switch4">Use Special Characters</label>
           </div>
       </form>
-
+        
+        <!-- Generated Password is shown in this text area -->
         <div class="card-body">
           <textarea
             readonly
@@ -56,9 +61,12 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"></textarea>
         </div>
-        <div class="card-footer">
+
+        <!-- On clicking this button displays the new password -->
+        <!-- Changed to semantic HTML -->
+        <footer class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
-        </div>
+        </footer>
   
       </div>
      
