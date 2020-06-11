@@ -25,7 +25,7 @@
       <form name="myForm">
         <!-- Included this slider for selecting the pasword length -->
         <label for="rangeInput">Select Password Length between 8 and 128</label>
-        <input type="range" id="rangeInput" name="rangeInput" min="8" max="128" onchange="displayValue(this.value);">
+        <input type="range" id="rangeInput" name="rangeInput" min="8" max="128" oninput="displayValue(this.value);">
        
         <!-- The value of the slider is displayed -->
         <label for="value">Value: </label>
