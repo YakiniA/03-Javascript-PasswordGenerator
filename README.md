@@ -1,6 +1,6 @@
 ## 03 JavaScript: Password Generator
 
-This assignment focuses on random password generation depending on the inputs like password length, use lowercase, use uppercase, use numbers, use special characters from the user. Generating a unique, strong password is required for different websites for security reasons and also to avoid hacking. The application is developed using HTML, CSS, and Javascript. This is made responsive so that it can be used on various devices and screen sizes.
+This assignment focuses on random password generation depending on the inputs like password length, lowercase, uppercase, numbers, special characters from the user. Generating a unique, strong password is required for different websites for security reasons and also to avoid hacking. The application is developed using HTML, CSS, and Javascript. This is made responsive so that it can be used on various devices and screen sizes.
 
 ### Functionality of the application
 

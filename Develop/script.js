@@ -46,7 +46,6 @@ function validateInput(){
    
     }else{  
         document.getElementById("message").innerHTML = "";
-        generatePassword(password);
         return password;        
     }
 }
